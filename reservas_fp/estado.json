@@ -1,0 +1,37 @@
+{
+  "hoteis": [
+    {
+      "id": "H1",
+      "nome": "Hotel Centro",
+      "cidade": "Florianópolis",
+      "rooms": [
+        {
+          "id": "R1",
+          "hotel_id": "H1",
+          "capacidade": 2,
+          "preco_base": 200.0
+        },
+        {
+          "id": "R2",
+          "hotel_id": "H1",
+          "capacidade": 4,
+          "preco_base": 320.0
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "nome": "Pousada Praia",
+      "cidade": "Florianópolis",
+      "rooms": [
+        {
+          "id": "R3",
+          "hotel_id": "H2",
+          "capacidade": 3,
+          "preco_base": 250.0
+        }
+      ]
+    }
+  ],
+  "reservas": []
+}
