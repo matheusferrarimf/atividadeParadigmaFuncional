@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Buscar quartos</h2>
+    <form method="post" action="{{ url_for('buscar') }}" class="row">
+      <div class="col field">
+        <label>Cidade</label>
+        <input name="cidade" placeholder="Florianópolis" required>
+      </div>
+      <div class="col field">
+        <label>Check-in</label>
+        <input type="date" name="checkin" required>
+      </div>
+      <div class="col field">
+        <label>Check-out</label>
+        <input type="date" name="checkout" required>
+      </div>
+      <div class="col field">
+        <label>Capacidade mínima</label>
+        <input type="number" name="capacidade" min="1" value="2">
+      </div>
+      <div class="col field">
+        <label>&nbsp;</label>
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Cancelar reserva (demo de idempotência)</h3>
+    <form method="post" action="{{ url_for('cancelar_view') }}" class="row">
+      <div class="col field">
+        <label>ID da reserva</label>
+        <input name="reserva_id" placeholder="RES-R1-2025-11-07" required>
+      </div>
+      <div class="col field">
+        <label>&nbsp;</label>
+        <button class="btn" type="submit">Cancelar</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

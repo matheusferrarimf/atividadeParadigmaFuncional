@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Quartos disponíveis em {{ cidade }}</h2>
+    <p class="muted">Período: {{ checkin }} → {{ checkout }}</p>
+  </div>
+
+  {% for hotel, rooms in resultados %}
+    <div class="card">
+      <h3>{{ hotel.nome }} — {{ hotel.cidade }}</h3>
+      {% for r in rooms %}
+        <form method="post" action="{{ url_for('cotar_view') }}" class="row" style="align-items:flex-end">
+          <div class="col"><strong>Quarto</strong><br>#{{ r.id }} · capacité: {{ r.capacidade }} · base R$ {{ '%.2f'|format(r.preco_base) }}</div>
+          <input type="hidden" name="room_id" value="{{ r.id }}">
+          <input type="hidden" name="checkin" value="{{ checkin }}">
+          <input type="hidden" name="checkout" value="{{ checkout }}">
+          <div class="col field">
+            <label>Cupom (opcional)</label>
+            <input name="cupom" placeholder="PROMO10">
+          </div>
+          <div class="col field">
+            <label>&nbsp;</label>
+            <button class="btn btn-primary">Cotar</button>
+          </div>
+        </form>
+        <hr style="border-color:#334155">
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  <p><a class="btn" href="{{ url_for('home') }}">Nova busca</a></p>
+{% endblock %}

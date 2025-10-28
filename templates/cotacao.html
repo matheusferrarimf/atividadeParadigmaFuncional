@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Cotação</h2>
+    <p>Quarto #{{ quarto.id }} — Base R$ {{ '%.2f'|format(quarto.preco_base) }}</p>
+    <p>Período: {{ checkin }} → {{ checkout }}</p>
+    {% if cupom %}<p>Cupom aplicado: <strong>{{ cupom }}</strong></p>{% endif %}
+    <h3>Total: R$ {{ '%.2f'|format(preco) }}</h3>
+
+    <form method="post" action="{{ url_for('reservar_view') }}" class="row">
+      <input type="hidden" name="room_id" value="{{ quarto.id }}">
+      <input type="hidden" name="checkin" value="{{ checkin }}">
+      <input type="hidden" name="checkout" value="{{ checkout }}">
+      <div class="col field">
+        <label>&nbsp;</label>
+        <button class="btn btn-primary" type="submit">Confirmar reserva</button>
+      </div>
+    </form>
+
+    <p><a class="btn" href="{{ url_for('home') }}">Voltar</a></p>
+  </div>
+{% endblock %}

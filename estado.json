@@ -33,5 +33,12 @@
       ]
     }
   ],
-  "reservas": []
+  "reservas": [
+    {
+      "id": "RES-R3-2025-10-28",
+      "room_id": "R3",
+      "checkin": "2025-10-28",
+      "checkout": "2025-10-29"
+    }
+  ]
 }
