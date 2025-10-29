@@ -1,7 +1,7 @@
 # Reservas FP (Programação Funcional em Python)
 
 Demonstração de conceitos funcionais com o tema **Turismo / Reservas de Hotel**.
-Alunos: Matheus Ferrari dos Santos && Sofya BBS de Andrade
+# Alunos: Matheus Ferrari dos Santos && Sofya BBS de Andrade
 
 ---
 
